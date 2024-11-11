@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\snack-spot.props" />
+</Project>
