@@ -1,0 +1,12 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "DataSourceName=myDSN;HostName=myServerAddress;Database=myDataBase;LogonID=myUsername;Password=myPassword;PortNumber=2055;"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}

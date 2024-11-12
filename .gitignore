@@ -1,3 +1,5 @@
 .vscode
 lib
 Dockerfile
+appsettings.Development.json
+appsettings.json
