@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("snack-spot")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8293e09109203dbe9fe9e3861e7cfe055c6714ec")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37b0aec29b000cd3ea0eb1f124e09006f05ee37c")]
 [assembly: System.Reflection.AssemblyProductAttribute("snack-spot")]
 [assembly: System.Reflection.AssemblyTitleAttribute("snack-spot")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
