@@ -3,3 +3,76 @@ lib
 Dockerfile
 appsettings.Development.json
 appsettings.json
+
+# Diretórios de build
+bin/
+obj/
+out/
+
+# Pacotes gerados
+*.nupkg
+*.snupkg
+packages/
+
+# Arquivos de log, temporários e de lock
+*.log
+*.lock
+*.cache
+*.tmp
+*.bak
+*.swp
+
+# Arquivos de configurações de usuário do Visual Studio e do Rider
+.vscode/
+.vscode/settings.json
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+.vs/
+
+# Arquivos de dependências e configuração do sistema
+*.dbmdl
+*.dbproj
+*.jfm
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Arquivos de publicação e deploy
+.publish/
+*.PublishProfiles/
+
+# Logs de execução e arquivos de saída de banco de dados
+*.pidb
+*.mssql
+*.sqlite
+*.sqlite3
+*.mdf
+*.ldf
+
+# Arquivos de ambiente local
+appsettings.Development.json
+appsettings.Local.json
+appsettings.Production.json
+.env
+
+# Dependências temporárias e cache do NuGet
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+*.nupkg
+*.snupkg
+.nuget/
+
+# Configurações de IDE específicas (opcionalmente, pois podem ajudar no time)
+.DS_Store
+*.sln.iml
+ReSharper*.*
+
+# Diretórios e arquivos temporários do SDK
+**/artifacts/
+**/publish/
+**/wwwroot/lib/
