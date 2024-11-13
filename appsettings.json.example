@@ -1,6 +1,6 @@
 {
   "ConnectionStrings": {
-    "DefaultConnection": "DataSourceName=myDSN;HostName=myServerAddress;Database=myDataBase;LogonID=myUsername;Password=myPassword;PortNumber=2055;"
+    "DefaultConnection": "Host=localhost;Port=5432;Database=sua_base_de_dados;Username=seu_usuario;Password=sua_senha"
   },
   "Logging": {
     "LogLevel": {
