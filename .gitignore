@@ -24,6 +24,7 @@ packages/
 
 # Arquivos de configurações de usuário do Visual Studio e do Rider
 .vscode/
+.config/
 .vscode/settings.json
 .idea/
 *.suo
