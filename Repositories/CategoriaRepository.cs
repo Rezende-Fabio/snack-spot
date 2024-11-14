@@ -4,10 +4,10 @@ using snack_spot.Models;
 
 namespace snack_spot.Repositories;
 
-public class CategoriaReposytory : ICategoriaRepository
+public class CategoriaRepository : ICategoriaRepository
 {
     private readonly AppDbContext _context;
-    public CategoriaReposytory(AppDbContext context)
+    public CategoriaRepository(AppDbContext context)
     {
         _context = context;
     }
