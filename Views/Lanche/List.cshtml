@@ -6,11 +6,7 @@
     <div class="row justify-content-md-center">
         @foreach (var lanche in Model.Lanches)
         {
-            <div class="col-card col-sm-3 col-md-3 col-lg-3 text-center mb-5 me-3">
-                <h4>@lanche.Nome</h4>
-                <img src="@lanche.ThumbnailUrl"><br>
-                <span class="col-preco">Preço: @lanche.Preco.ToString("c")</span>
-            </div>
+            <partial name="_LanchesResumo" for="@lanche" />
         }
     </div>
 </div>
