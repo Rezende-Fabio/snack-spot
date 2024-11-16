@@ -1,13 +1,16 @@
 @model IEnumerable<snack_spot.Models.Lanche>
 
-<div>
-    <h2>@ViewData["Titulo"]</h2>
-</div>
+<h2>@ViewData["Titulo"]</h2>
 
-@foreach( var lanche in Model){
-    <div>
-        <h4>@lanche.Nome</h4>
-        <img src="@lanche.ThumbnailUrl">
-        <h3>Preço: @lanche.Preco.ToString("c")</h3>
+<div class="container mt-4">
+    <div class="row justify-content-md-center">
+        @foreach (var lanche in Model)
+        {
+            <div class="col-card col-sm-3 col-md-3 col-lg-3 text-center mb-5 me-3">
+                <h4>@lanche.Nome</h4>
+                <img src="@lanche.ThumbnailUrl"><br>
+                <span class="col-preco">Preço: @lanche.Preco.ToString("c")</span>
+            </div>
+        }
     </div>
-}
+</div>

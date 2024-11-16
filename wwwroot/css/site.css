@@ -20,3 +20,18 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.col-card{
+  background-color: #efefef;
+  border: 2px solid #aaaaaa;
+  border-radius: 15px;
+}
+
+.col-card img{
+  border-radius: 15px;
+}
+
+.col-card .col-preco{
+  font-size: 18px;
+  font-weight: 600;
+}
