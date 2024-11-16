@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using snack_spot.Interfaces;
+using snack_spot.ViewModels;
 
 namespace snack_spot.Controllers;
 
@@ -13,8 +14,10 @@ public class LancheController : Controller
 
     public IActionResult List()
     {
-        ViewData["Titulo"] = "Todos os lanches"; 
-        var lanches = _lancheRepository.Lanches;
-        return View(lanches);
+        var lancheListViewModel = new LancheListViewModel();
+        lancheListViewModel.Lanches = _lancheRepository.Lanches;
+        lancheListViewModel.CategoriaAtual = "Categoria";
+
+        return View(lancheListViewModel);
     }
 }
