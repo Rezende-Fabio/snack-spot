@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using snack_spot.Context;
 using snack_spot.Interfaces;
+using snack_spot.Models;
 using snack_spot.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,7 @@ builder.Services.AddSession();
 
 builder.Services.AddTransient<ILancheRepository, LancheRepository>();
 builder.Services.AddTransient<ICategoriaRepository, CategoriaRepository>();
+builder.Services.AddScoped(car => CarrinhoCompra.GetCarrinho(car));
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
