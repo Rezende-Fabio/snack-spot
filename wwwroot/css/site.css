@@ -8,7 +8,11 @@ html {
   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
@@ -21,17 +25,33 @@ body {
   margin-bottom: 60px;
 }
 
-.col-card{
+/* ##################################### Listagem de Lanches ##################################### */
+.col-card {
   background-color: #efefef;
   border: 2px solid #aaaaaa;
   border-radius: 15px;
 }
 
-.col-card img{
+.col-card img {
   border-radius: 15px;
 }
 
-.col-card .col-preco{
+.col-card .col-preco {
   font-size: 18px;
   font-weight: 600;
 }
+
+/* ##################################### Listagem de Lanches ##################################### */
+
+/* ##################################### Carrinho de Compras ##################################### */
+
+.main-carrinho-compra .img-carrinho-compra {
+  width: 50px !important;
+}
+
+.main-carrinho-compra span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* ##################################### Carrinho de Compras ##################################### */
