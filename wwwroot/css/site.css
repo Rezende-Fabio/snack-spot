@@ -25,6 +25,33 @@ body {
   margin-bottom: 60px;
 }
 
+/* ##################################### Home ##################################### */
+.home-index h1 {
+  font-size: 50px;
+}
+
+.carousel {
+  max-height: 500px;
+  overflow: hidden;   
+  border-radius: 15px;
+}
+
+.home-index .carousel-item img {
+  max-height: 600px;
+  width: auto;
+  height: auto;
+  object-fit: fill;
+  object-position: top;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    display: none;
+}
+
+/* ##################################### Home ##################################### */
+
+
 /* ##################################### Listagem de Lanches ##################################### */
 .col-card {
   background-color: #efefef;
@@ -42,6 +69,7 @@ body {
 }
 
 /* ##################################### Listagem de Lanches ##################################### */
+
 
 /* ##################################### Carrinho de Compras ##################################### */
 
