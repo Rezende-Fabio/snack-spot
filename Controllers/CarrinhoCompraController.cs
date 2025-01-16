@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using snack_spot.Interfaces;
 using snack_spot.Models;
