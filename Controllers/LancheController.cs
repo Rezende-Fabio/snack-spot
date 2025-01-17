@@ -40,4 +40,11 @@ public class LancheController : Controller
 
         return View(lancheListViewModel);
     }
+
+    public IActionResult Details(int idLanche)
+    {
+        Lanche lanche = _lancheRepository.Lanches.FirstOrDefault(l => l.LancheId == idLanche);
+
+        return View(lanche);
+    }
 }
