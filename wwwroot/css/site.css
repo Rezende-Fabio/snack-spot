@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+
 html {
   font-size: 14px;
 }
@@ -8,7 +10,11 @@ html {
   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
@@ -19,4 +25,145 @@ html {
 
 body {
   margin-bottom: 60px;
+  color: #ffffff;
 }
+
+body a {
+  text-decoration: none !important;
+}
+
+/* ##################################### Home ##################################### */
+.home-index h1 {
+  font-size: 50px;
+}
+
+.text-color-title {
+  font-weight: bold;
+  color: #258cfb;
+  font-family: "Titan One", serif;
+  font-style: normal;
+}
+
+.carousel {
+  max-height: 560px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.home-index .carousel-item img {
+  max-height: 600px;
+  width: auto;
+  height: auto;
+  object-fit: fill;
+  object-position: top;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  display: none;
+}
+
+/* ##################################### Home ##################################### */
+
+/* ##################################### NavBar ##################################### */
+
+.navbar {
+  background-color: #c8c8c8;
+}
+
+.icone-carrinho-compra {
+  margin-right: 1.5rem;
+}
+
+.icone-carrinho-compra a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.icone-carrinho-compra .qtde-itens-carrinho {
+  position: absolute;
+  top: 1px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #258cfb;
+  padding: 0px 6px 1px 6px;
+  border-radius: 80px;
+}
+
+/* ##################################### NavBar ##################################### */
+
+
+/* ##################################### Listagem de Lanches ##################################### */
+.col-card a{
+  text-decoration: none !important;
+  color: #000000;
+}
+
+.card-lanche {
+  background-color: #efefef;
+  border: 2px solid #aaaaaa;
+  border-radius: 15px;
+  color: #000000 !important;  
+  transition: 15s linear ease-in !important;
+}
+
+.col-card:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.col-card img {
+  border-radius: 15px;
+}
+
+.col-card .col-preco {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.cart-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  max-width: 250px !important;
+}
+
+/* ##################################### Listagem de Lanches ##################################### */
+
+
+/* ##################################### Detalhes do Lanche ##################################### */
+
+.btn-details {
+  position: absolute;
+  bottom: 0px;
+}
+
+/* ##################################### Detalhes do Lanche ##################################### */
+
+
+/* ##################################### Carrinho de Compras ##################################### */
+
+.main-carrinho-compra .img-carrinho-compra {
+  width: 50px !important;
+}
+
+.main-carrinho-compra span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.main-carrinho-compra .table {
+  color: #ffffff;
+}
+
+.main-carrinho-compra table {
+  color: #ffffff !important;
+}
+
+.main-carrinho-compra table td {
+  color: #ffffff !important;
+}
+
+/* ##################################### Carrinho de Compras ##################################### */

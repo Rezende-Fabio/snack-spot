@@ -1,0 +1,56 @@
+@model CarrinhoCompraViewModel
+
+<div class="container main-carrinho-compra">
+    <div class="header-carrinho-compra">
+        <img class="img-carrinho-compra" src="~/images/imagemCarrinho.png" alt="Imagem do carrinho">
+        <span>Seu carrinho de compras: </span>
+    </div>
+
+    <div class="row mt-4">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Quantidade</th>
+                    <th>Lanche</th>
+                    <th class="text-end">Preço</th>
+                    <th class="text-end">Subtotal</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model.CarrinhoCompra.CarrinhoCompraItens)
+                {
+                    <tr>
+                        <td class="text-center">@item.Quantidade</td>
+                        <td class="text-start">@item.Lanche.Nome</td>
+                        <td class="text-end">@item.Lanche.Preco.ToString("c")</td>
+                        <td class="text-end">@((@item.Quantidade * @item.Lanche.Preco).ToString("c"))</td>
+                        <td class="text-end">
+                            <a class="btn btn-sm btn-outline-danger" asp-controller="CarrinhoCompra" asp-action="RemoverItemCarrinhoCompra"
+                                asp-route-idLanche="@item.Lanche.LancheId">
+                                <span class="material-symbols-outlined">
+                                    delete
+                                </span>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+            <tfoot>
+                <td colspan="3" class="text-end">Total:</td>
+                <td class="text-end">
+                    @Model.TotalCarrinho.ToString("c")
+                </td>
+            </tfoot>
+        </table>
+    </div>
+
+    <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+            <a class="btn btn-success" asp-controller="Pedido" asp-action="Checkout">Encerra Pedido</a>
+            <a class="btn btn-primary" asp-controller="Lanche" asp-action="List">Continuar Comprando</a>
+        </div>
+    </div>
+</div>
