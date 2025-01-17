@@ -37,7 +37,7 @@ public class CarrinhoCompra
 
     public void AdicionarAoCarrinho(Lanche lanche)
     {
-        var carrinhoCompraItem = _context.CarrinhoCompraItem.SingleOrDefault(
+        var carrinhoCompraItem = _context.CarrinhoCompraItens.SingleOrDefault(
             s => s.Lanche.LancheId == lanche.LancheId &&
                  s.CarrinhoCompraId == CarrinhoCompraId
         );
@@ -51,7 +51,7 @@ public class CarrinhoCompra
                 Quantidade = 1
             };
 
-            _context.CarrinhoCompraItem.Add(carrinhoCompraItem);
+            _context.CarrinhoCompraItens.Add(carrinhoCompraItem);
         }
         else
         {
@@ -63,7 +63,7 @@ public class CarrinhoCompra
 
     public void RemoverDoCarrinho(Lanche lanche)
     {
-        var carrinhoCompraItem = _context.CarrinhoCompraItem.SingleOrDefault(
+        var carrinhoCompraItem = _context.CarrinhoCompraItens.SingleOrDefault(
             s => s.Lanche.LancheId == lanche.LancheId &&
                  s.CarrinhoCompraId == CarrinhoCompraId
         );
@@ -76,7 +76,7 @@ public class CarrinhoCompra
             }
             else
             {
-                _context.CarrinhoCompraItem.Remove(carrinhoCompraItem);
+                _context.CarrinhoCompraItens.Remove(carrinhoCompraItem);
             }
         }
 
@@ -85,7 +85,7 @@ public class CarrinhoCompra
 
     public List<CarrinhoCompraItem> GetCarrinhoCompraItens()
     {
-        List<CarrinhoCompraItem> listaItens = _context.CarrinhoCompraItem
+        List<CarrinhoCompraItem> listaItens = _context.CarrinhoCompraItens
         .Where(c => c.CarrinhoCompraId == CarrinhoCompraId)
         .Include(c => c.Lanche)
         .ToList();
@@ -95,16 +95,16 @@ public class CarrinhoCompra
 
     public void LimparCarrinho()
     {
-        CarrinhoCompraItem carrinhoItens = _context.CarrinhoCompraItem
+        CarrinhoCompraItem carrinhoItens = _context.CarrinhoCompraItens
         .First(c => c.CarrinhoCompraId == CarrinhoCompraId);
 
-        _context.CarrinhoCompraItem.RemoveRange(carrinhoItens);
+        _context.CarrinhoCompraItens.RemoveRange(carrinhoItens);
         _context.SaveChanges();
     }
 
     public decimal GetCarrinhoCompraTotal()
     {
-        decimal total = _context.CarrinhoCompraItem
+        decimal total = _context.CarrinhoCompraItens
         .Where(c => c.CarrinhoCompraId == CarrinhoCompraId)
         .Select(c => c.Lanche.Preco * c.Quantidade).Sum();
 

@@ -12,5 +12,5 @@ public class CategoriaRepository : ICategoriaRepository
         _context = context;
     }
 
-    public IEnumerable<Categoria> Categorias => _context.Categoria;
+    public IEnumerable<Categoria> Categorias => _context.Categorias;
 }
