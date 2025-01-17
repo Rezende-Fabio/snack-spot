@@ -26,25 +26,9 @@ public class LancheController : Controller
         }
         else
         {
-            if (string.Equals("Natural", categoria, StringComparison.OrdinalIgnoreCase))
-            {
-                lanches = _lancheRepository.Lanches
-                .Where(l => l.Categoria.Nome.Equals("Natural", StringComparison.OrdinalIgnoreCase))
-                .OrderBy(l => l.Nome);
-            }
-            else if (string.Equals("Caseiro", categoria, StringComparison.OrdinalIgnoreCase))
-            {
-                lanches = _lancheRepository.Lanches
-                .Where(l => l.Categoria.Nome.Equals("Caseiro", StringComparison.OrdinalIgnoreCase))
-                .OrderBy(l => l.Nome);
-            }
-            else
-            {
-                lanches = _lancheRepository.Lanches
-                .Where(l => l.Categoria.Nome.Equals("Gourmet", StringComparison.OrdinalIgnoreCase))
-                .OrderBy(l => l.Nome);
-            }
-
+            lanches = _lancheRepository.Lanches
+                .Where(l => l.Categoria.Nome.Equals(categoria, StringComparison.OrdinalIgnoreCase))
+                .OrderBy(c => c.Nome);
             categoriaAtual = StringUtils.Capitalize(categoria);
         }
 
