@@ -82,7 +82,7 @@ body a {
 
 .icone-carrinho-compra .qtde-itens-carrinho {
   position: absolute;
-  top: 1px;
+  top: 5px;
   font-size: 14px;
   font-weight: 500;
   background-color: #258cfb;
