@@ -17,7 +17,7 @@ public class PedidoRepository : IPedidoRepository
 
     public void CriarPedido(Pedido pedido)
     {
-        pedido.PedidoEnviado = DateTime.Now;
+        pedido.PedidoEnviado = DateTime.Now.ToUniversalTime();
 
         _appDbContext.Pedidos.Add(pedido);
         _appDbContext.SaveChanges();
