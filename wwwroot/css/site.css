@@ -103,7 +103,7 @@ body a {
 
 .icone-carrinho-compra {
   position: fixed;
-  z-index: 9999;
+  z-index: 999;
   top: 4rem;
   right: 1rem;
   padding: 20px 16px 17px 16px;

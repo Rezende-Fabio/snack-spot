@@ -1,5 +1,6 @@
 
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using snack_spot.ViewModels;
@@ -92,6 +93,7 @@ public class AccountController : Controller
         return View(registerViewModel);
     }
 
+    [Authorize]
     [HttpPost]
     public async Task<IActionResult> Logout()
     {
