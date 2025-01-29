@@ -1,0 +1,40 @@
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+
+<div class="login-resumo">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <div class="dropdown dropstart">
+
+            <a class="btn dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <span class="material-symbols-outlined">
+                    account_circle
+                </span>
+            </a>
+
+            <ul class="dropdown-menu">
+                <li class="dropdown-item-text">
+                    <span>@User.Identity.Name</span>
+                </li>
+                <li class="dropdown-divider"></li>
+                <li class="dropdown-item-text d-flex justify-content-center">
+                    <form asp-area="" asp-controller="Account" asp-action="Logout" id="logout-form" method="post">
+                        <button type="submit" class="btn btn-sm btn-primary">
+                            Sair
+                        </button>
+                    </form>
+                </li>
+            </ul>
+
+        </div>
+    }
+    else
+    {
+        <a asp-controller="Account" asp-action="Login"
+            asp-route-returnUrl="@string.Format("{0}{1}", Context.Request.Path, Context.Request.QueryString)" class="btn btn-sm btn-primary mt-1">
+            Login
+        </a>
+    }
+</div>

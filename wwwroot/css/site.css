@@ -65,6 +65,7 @@ body a {
 
 /* ##################################### Home ##################################### */
 
+
 /* ##################################### NavBar ##################################### */
 
 .navbar {
@@ -76,8 +77,38 @@ body a {
   color: #000000;
 }
 
+/* ##################################### NavBar ##################################### */
+
+
+/* ##################################### Login Resumo ##################################### */
+
+.login-resumo .dropdown-toggle::after {
+  display: none !important;
+}
+
+.login-resumo .dropdown-toggle::before {
+  display: none !important;
+}
+
+.login-resumo .dropdown-toggle {
+  background-color: #258cfb;
+  padding: 5px 8px 3px 8px;
+  border-radius: 45%;
+}
+
+/* ##################################### Login Resumo ##################################### */
+
+
+/* ##################################### Icone Carrinho ##################################### */
+
 .icone-carrinho-compra {
-  margin-right: 1.5rem;
+  position: fixed;
+  z-index: 9999;
+  top: 4rem;
+  right: 1rem;
+  padding: 20px 16px 17px 16px;
+  background-color: #efefef;
+  border-radius: 15px;
 }
 
 .icone-carrinho-compra a {
@@ -87,15 +118,17 @@ body a {
 
 .icone-carrinho-compra .qtde-itens-carrinho {
   position: absolute;
-  top: 5px;
-  font-size: 14px;
+  color: #ffffff;
+  top: 4px;
+  right: 5px;
+  font-size: 13px;
   font-weight: 500;
-  background-color: #258cfb;
+  background-color: #fb2525;
   padding: 0px 6px 1px 6px;
   border-radius: 80px;
 }
 
-/* ##################################### NavBar ##################################### */
+/* ##################################### Icone Carrinho ##################################### */
 
 
 /* ##################################### Listagem de Lanches ##################################### */
