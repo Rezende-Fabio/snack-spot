@@ -50,8 +50,8 @@
                                 </div>
                             </form>
                         </li>
-                        <li class="nav-item">
-                            @await Component.InvokeAsync("CarrinhoCompraResumo")
+                        <li class="nav-item me-2">
+                            @await Html.PartialAsync("_LoginResumo")
                         </li>
                     </ul>
                 </div>
@@ -59,6 +59,7 @@
         </nav>
     </header>
     <div class="container">
+        @await Component.InvokeAsync("CarrinhoCompraResumo")
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

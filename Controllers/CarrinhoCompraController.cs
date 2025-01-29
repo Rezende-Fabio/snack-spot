@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using snack_spot.Interfaces;
 using snack_spot.Models;
@@ -30,6 +31,7 @@ public class CarrinhoCompraController : Controller
         return View(carrinhoCompraVM);
     }
 
+    [Authorize]
     public RedirectToActionResult AdicionarItemCarrinhoCompra(int idLanche)
     {
         Lanche lancheSelec = _lancheRepository.Lanches.FirstOrDefault(l => l.LancheId == idLanche);
@@ -42,6 +44,7 @@ public class CarrinhoCompraController : Controller
         return RedirectToAction("Index");
     }
 
+    [Authorize]
     public RedirectToActionResult RemoverItemCarrinhoCompra(int idLanche)
     {
         Lanche lancheSelec = _lancheRepository.Lanches.FirstOrDefault(l => l.LancheId == idLanche);
