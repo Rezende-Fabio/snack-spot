@@ -7,11 +7,13 @@ public class SeedUsersRoleInitial : ISeedRoleInitial
 {
     private readonly UserManager<IdentityUser> _userManager;
     private readonly RoleManager<IdentityRole> _roleManager;
+    private readonly IConfiguration _configuration;
 
-    public SeedUsersRoleInitial(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
+    public SeedUsersRoleInitial(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
     {
         _userManager = userManager;
         _roleManager = roleManager;
+        _configuration = configuration;
     }
 
     public void SeedRoles()
@@ -35,18 +37,21 @@ public class SeedUsersRoleInitial : ISeedRoleInitial
 
     public void SeedUsers()
     {
-        if (_userManager.FindByEmailAsync("admin@admin.com").Result == null)
+        string adminEmail = _configuration["AdminUser:Email"];
+        string adminPassword = _configuration["AdminUser:Password"];
+
+        if (_userManager.FindByEmailAsync(adminEmail).Result == null)
         {
             IdentityUser user = new IdentityUser();
             user.UserName = "admin";
-            user.Email = "admin@admin.com";
+            user.Email = adminEmail;
             user.NormalizedUserName = "ADMIN";
-            user.NormalizedEmail = "ADMIN@ADMIN.COM";
+            user.NormalizedEmail = adminEmail.ToUpper();
             user.EmailConfirmed = true;
             user.LockoutEnabled = false;
             user.SecurityStamp = Guid.NewGuid().ToString();
 
-            IdentityResult result = _userManager.CreateAsync(user, "Admin123Qwe@").Result;
+            IdentityResult result = _userManager.CreateAsync(user, adminPassword).Result;
 
             if (result.Succeeded)
             {
