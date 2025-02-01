@@ -72,7 +72,7 @@ body a {
   background-color: #c8c8c8;
 }
 
-.navbar h4{
+.navbar h4 {
   text-decoration: none;
   color: #000000;
 }
@@ -416,3 +416,22 @@ body a {
 }
 
 /* ##################################### Registro Usuário ##################################### */
+
+
+/* ##################################### Erros ##################################### */
+
+.img-erro {
+  width: 30%;
+  border-radius: 15px;
+}
+
+.erro-403 {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ##################################### Erros ##################################### */
