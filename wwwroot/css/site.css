@@ -32,6 +32,10 @@ body a {
   text-decoration: none !important;
 }
 
+.table {
+  color: #ffffff !important;
+}
+
 /* ##################################### Home ##################################### */
 .home-index h1 {
   font-size: 50px;
@@ -72,7 +76,7 @@ body a {
   background-color: #c8c8c8;
 }
 
-.navbar h4{
+.navbar h4 {
   text-decoration: none;
   color: #000000;
 }
@@ -81,6 +85,10 @@ body a {
 
 
 /* ##################################### Login Resumo ##################################### */
+
+.login-resumo .dropstart .dropdown-menu{
+  width: 15rem;
+}
 
 .login-resumo .dropdown-toggle::after {
   display: none !important;
@@ -92,8 +100,53 @@ body a {
 
 .login-resumo .dropdown-toggle {
   background-color: #258cfb;
-  padding: 5px 8px 3px 8px;
+  padding: 8px 10px 0px 10px;
   border-radius: 45%;
+}
+
+.login-resumo .material-symbols-outlined {
+  font-size: 1.8rem;
+}
+
+.login-resumo .material-symbols-outlined::after {
+  display: block;
+  position: relative;
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: rgb(0, 255, 0);
+  border-radius: 50%;
+  bottom: 10px;
+  left: 17px;
+  border: 1.5px solid #ffffff;
+}
+
+.login-resumo .informacoes-dropdown {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.login-resumo .informacoes-dropdown .nome-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.login-resumo .informacoes-dropdown .nome-dropdown span {
+  font-size: 18px;
+  margin-left: 1rem;
+}
+
+.login-resumo .informacoes-dropdown .nome-dropdown .tipo-usuario {
+  font-size: 14px;
+  color: #aaaaaa;
+  margin-left: 1rem;
+}
+
+.login-resumo .informacoes-dropdown .icone-dropdown {
+  margin-left: 1rem;
+  margin-top: 1rem;
 }
 
 /* ##################################### Login Resumo ##################################### */
@@ -416,3 +469,22 @@ body a {
 }
 
 /* ##################################### Registro Usuário ##################################### */
+
+
+/* ##################################### Erros ##################################### */
+
+.img-erro {
+  width: 30%;
+  border-radius: 15px;
+}
+
+.erro-403 {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ##################################### Erros ##################################### */
