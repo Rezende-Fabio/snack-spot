@@ -32,6 +32,10 @@ body a {
   text-decoration: none !important;
 }
 
+.table {
+  color: #ffffff !important;
+}
+
 /* ##################################### Home ##################################### */
 .home-index h1 {
   font-size: 50px;
