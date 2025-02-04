@@ -1,4 +1,4 @@
-﻿@model IEnumerable<snack_spot.Models.Categoria>
+﻿@model ReflectionIT.Mvc.Paging.PagingList<snack_spot.Models.Categoria>
 
 @{
     ViewData["Title"] = "Index";
@@ -6,9 +6,25 @@
 
 <h1>Lista de Categorias</h1>
 
-<p>
-    <a asp-action="Create">Criar Nova Categoria</a>
-</p>
+<div class="mb-4">
+    <p>
+        <a asp-action="Create">Criar Nova Categoria</a>
+    </p>
+</div>
+
+
+<form method="get" class="container form-inline">
+    <div class="row">
+        <div class="col-6">
+            <input name="filter" class="form-control" value="@Model.RouteValue["Filter"]" />&nbsp;
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-info">Buscar</button>
+        </div>
+    </div>
+</form>
+
+
 <table class="table">
     <thead>
         <tr>
@@ -22,20 +38,25 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CategoriaId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.CategoriaId">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.CategoriaId">Deletar</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CategoriaId">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.CategoriaId">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CategoriaId">Deletar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<nav aria-label="Products navigation example">
+    <vc:pager paging-list="@Model" />
+</nav>

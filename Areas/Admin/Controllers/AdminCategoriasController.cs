@@ -3,6 +3,7 @@ using snack_spot.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ReflectionIT.Mvc.Paging;
 
 namespace snack_spot.Areas.Admin.Controllers;
 
@@ -18,9 +19,23 @@ public class AdminCategoriasController : Controller
     }
 
     // GET: Admin/AdminCategorias
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(string filter, int pageIndex = 1, string sort = "Nome")
     {
-        return View(await _context.Categorias.ToListAsync());
+        var resultado = _context.Categorias.AsNoTracking()
+                        .AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(filter))
+        {
+            resultado = resultado.Where(c => c.Nome.ToLower().Contains(filter.ToLower()));
+        }
+
+        var model = await PagingList.CreateAsync(resultado, 5, pageIndex, sort, "Nome");
+
+        model.RouteValue = new RouteValueDictionary {
+            { "filter", filter}
+        };
+
+        return View(model);
     }
 
     // GET: Admin/AdminCategorias/Details/5
