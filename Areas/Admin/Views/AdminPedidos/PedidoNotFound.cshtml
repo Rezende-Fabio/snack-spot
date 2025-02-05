@@ -1,0 +1,11 @@
+@model int
+
+
+<div class="erro-404">
+    <img class="img-erro" src="~/images/erro_404.jpg" alt="erro_404 404">
+    <h1>O Pedido com id = @Model não foi encontrado</h1>
+
+    <div>
+        <a class="btn btn-primary" asp-area="Admin" asp-controller="AdminPedidos" asp-action="Index">Voltar ao Menu</a>
+    </div>
+</div>
