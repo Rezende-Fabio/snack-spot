@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using ReflectionIT.Mvc.Paging;
+using snack_spot.Areas.Admin.Services;
 using snack_spot.Context;
 using snack_spot.Interfaces;
 using snack_spot.Models;
@@ -29,16 +31,24 @@ public static class ConfigureServices
         services.AddTransient<ICategoriaRepository, CategoriaRepository>();
         services.AddTransient<IPedidoRepository, PedidoRepository>();
         services.AddScoped(car => CarrinhoCompra.GetCarrinho(car));
+        services.AddScoped<RelatorioVendasService>();
 
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
         services.AddAuthorization(options =>
         {
             options.AddPolicy("Admin",
-                policy => {
+                policy =>
+                {
                     policy.RequireRole("Admin");
                 }
             );
+        });
+
+        services.AddPaging(options =>
+        {
+            options.ViewName = "Bootstrap5";
+            options.PageParameterName = "pageindex";
         });
 
         return services;

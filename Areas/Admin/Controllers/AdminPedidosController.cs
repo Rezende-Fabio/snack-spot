@@ -3,6 +3,8 @@ using snack_spot.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ReflectionIT.Mvc.Paging;
+using snack_spot.ViewModels;
 
 namespace snack_spot.Areas.Admin.Controllers;
 
@@ -18,9 +20,23 @@ public class AdminPedidosController : Controller
     }
 
     // GET: Admin/AdminPedidos
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(string filter, int pageIndex = 1, string sort = "Nome")
     {
-        return View(await _context.Pedidos.ToListAsync());
+        var resultado = _context.Pedidos.AsNoTracking()
+                        .AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(filter))
+        {
+            resultado = resultado.Where(p => p.Nome.ToLower().Contains(filter.ToLower()));
+        }
+
+        var model = await PagingList.CreateAsync(resultado, 5, pageIndex, sort, "Nome");
+
+        model.RouteValue = new RouteValueDictionary {
+            { "filter", filter}
+        };
+
+        return View(model);
     }
 
     // GET: Admin/AdminPedidos/Details/5
@@ -141,6 +157,27 @@ public class AdminPedidosController : Controller
         _context.Pedidos.Remove(pedido);
         await _context.SaveChangesAsync();
         return RedirectToAction(nameof(Index));
+    }
+
+    public IActionResult PedidoLanches(int id)
+    {
+        var pedido = _context.Pedidos.Include(pd => pd.PedidoItens)
+                    .ThenInclude(l => l.Lanche)
+                    .FirstOrDefault(p => p.PedidoId == id);
+
+        if (pedido == null)
+        {
+            Response.StatusCode = 404;
+            return View("PedidoNotFound", id);
+        }
+
+        PedidoLancheViewModel pedidoLancheView = new PedidoLancheViewModel()
+        {
+            Pedido = pedido,
+            PedidoDetalhes = pedido.PedidoItens
+        };
+
+        return View(pedidoLancheView);
     }
 
     private bool PedidoExists(int id)

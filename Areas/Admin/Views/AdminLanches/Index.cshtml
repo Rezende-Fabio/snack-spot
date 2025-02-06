@@ -1,4 +1,4 @@
-﻿@model IEnumerable<snack_spot.Models.Lanche>
+﻿@model ReflectionIT.Mvc.Paging.PagingList<snack_spot.Models.Lanche>
 
 @{
     ViewData["Title"] = "Index";
@@ -6,9 +6,25 @@
 
 <h1>Lista de Lanches</h1>
 
-<p>
-    <a asp-action="Create">Criar Novo Lanche</a>
-</p>
+<div class="mb-4">
+    <p>
+        <a asp-action="Create">Criar Novo Lanche</a>
+    </p>
+</div>
+
+
+<form method="get" class="container form-inline">
+    <div class="row">
+        <div class="col-6">
+            <input name="filter" class="form-control" value="@Model.RouteValue["Filter"]" />&nbsp;
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-info">Buscar</button>
+        </div>
+    </div>
+</form>
+
+
 <table class="table">
     <thead>
         <tr>
@@ -43,41 +59,46 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DescricaoCurta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DescricaoDetalhada)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Preco)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ThumbnailUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsLanchePreferido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmEstoque)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Categoria.Nome)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.LancheId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.LancheId">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.LancheId">Deletar</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+                <tr>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.DescricaoCurta)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.DescricaoDetalhada)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.Preco)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.ImageUrl)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.ThumbnailUrl)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.IsLanchePreferido)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.EmEstoque)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.Categoria.Nome)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.LancheId">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.LancheId">Detalhes</a> |
+                        <a asp-action="Delete" asp-route-id="@item.LancheId">Deletar</a>
+                    </td>
+                </tr>
+        }
     </tbody>
 </table>
+
+<nav aria-label="Products navigation example">
+    <vc:pager paging-list="@Model" />
+</nav>
