@@ -1,13 +1,17 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using snack_spot.Models;
 
 namespace snack_spot.Context;
 
-public class AppDbContext : DbContext
+public class AppDbContext : IdentityDbContext<IdentityUser>
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-    public DbSet<Categoria> Categoria { get; set; }
-    public DbSet<Lanche> Lanche { get; set; }
-    public DbSet<CarrinhoCompraItem> CarrinhoCompraItem { get; set; }
+    public DbSet<Categoria> Categorias { get; set; }
+    public DbSet<Lanche> Lanches { get; set; }
+    public DbSet<CarrinhoCompraItem> CarrinhoCompraItens { get; set; }
+    public DbSet<Pedido> Pedidos { get; set; }
+    public DbSet<PedidoDetalhe> PedidoDetalhes { get; set; }
 }

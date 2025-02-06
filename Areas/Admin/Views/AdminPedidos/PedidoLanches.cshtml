@@ -1,0 +1,57 @@
+@model snack_spot.ViewModels.PedidoLancheViewModel
+
+@{
+    ViewData["Title"] = "PedidoLanche";
+    decimal totalPedido = 0;
+}
+
+<div class="pedido-lanches">
+    <div class="card">
+        <div class="card-body">
+            <p>Pedido............. : <strong>@Html.DisplayFor(model => @Model.Pedido.PedidoId)</strong></p>
+            <p>Cliente............ : <strong>@Html.DisplayFor(model => @Model.Pedido.Nome)</strong></p>
+            <p>Data............... : <strong>@Html.DisplayFor(model => @Model.Pedido.PedidoEnviado)</strong></p>
+            <p>Entrega............ : <strong>@Html.DisplayFor(model => @Model.Pedido.PedidoEntregueEm)</strong></p>
+            <hr>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Quantidade</th>
+                        <th>Lanche</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Pedido.PedidoItens)
+                    {
+                        totalPedido += (@item.Lanche.Preco * @item.Quantidade);
+                        <tr>
+                            <td>
+                                <img src="@item.Lanche.ThumbnailUrl" alt="Imagem do Lanche" width="40" height="40">
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Quantidade)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Lanche.Nome)
+                            </td>
+                            <td>
+                                @string.Format("{0:C}", item.Lanche.Preco)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <h4>
+                Valor total do Pedido: <strong>@string.Format("{0:C}", @totalPedido)</strong>
+            </h4>
+        </div>
+
+       <div class="form-group d-flex justify-content-center">
+            <a asp-action="Index">Voltar a Listagem</a>
+        </div>
+    </div>
+</div>

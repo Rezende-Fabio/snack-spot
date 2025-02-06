@@ -32,6 +32,10 @@ body a {
   text-decoration: none !important;
 }
 
+.table {
+  color: #ffffff !important;
+}
+
 /* ##################################### Home ##################################### */
 .home-index h1 {
   font-size: 50px;
@@ -65,14 +69,99 @@ body a {
 
 /* ##################################### Home ##################################### */
 
+
 /* ##################################### NavBar ##################################### */
 
 .navbar {
   background-color: #c8c8c8;
 }
 
+.navbar h4 {
+  text-decoration: none;
+  color: #000000;
+}
+
+/* ##################################### NavBar ##################################### */
+
+
+/* ##################################### Login Resumo ##################################### */
+
+.login-resumo .dropstart .dropdown-menu{
+  width: 15rem;
+}
+
+.login-resumo .dropdown-toggle::after {
+  display: none !important;
+}
+
+.login-resumo .dropdown-toggle::before {
+  display: none !important;
+}
+
+.login-resumo .dropdown-toggle {
+  background-color: #258cfb;
+  padding: 8px 10px 0px 10px;
+  border-radius: 45%;
+}
+
+.login-resumo .material-symbols-outlined {
+  font-size: 1.8rem;
+}
+
+.login-resumo .material-symbols-outlined::after {
+  display: block;
+  position: relative;
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: rgb(0, 255, 0);
+  border-radius: 50%;
+  bottom: 10px;
+  left: 17px;
+  border: 1.5px solid #ffffff;
+}
+
+.login-resumo .informacoes-dropdown {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.login-resumo .informacoes-dropdown .nome-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.login-resumo .informacoes-dropdown .nome-dropdown span {
+  font-size: 18px;
+  margin-left: 1rem;
+}
+
+.login-resumo .informacoes-dropdown .nome-dropdown .tipo-usuario {
+  font-size: 14px;
+  color: #aaaaaa;
+  margin-left: 1rem;
+}
+
+.login-resumo .informacoes-dropdown .icone-dropdown {
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+/* ##################################### Login Resumo ##################################### */
+
+
+/* ##################################### Icone Carrinho ##################################### */
+
 .icone-carrinho-compra {
-  margin-right: 1.5rem;
+  position: fixed;
+  z-index: 999;
+  top: 4rem;
+  right: 1rem;
+  padding: 20px 16px 17px 16px;
+  background-color: #efefef;
+  border-radius: 15px;
 }
 
 .icone-carrinho-compra a {
@@ -82,19 +171,21 @@ body a {
 
 .icone-carrinho-compra .qtde-itens-carrinho {
   position: absolute;
-  top: 1px;
-  font-size: 14px;
+  color: #ffffff;
+  top: 4px;
+  right: 5px;
+  font-size: 13px;
   font-weight: 500;
-  background-color: #258cfb;
+  background-color: #fb2525;
   padding: 0px 6px 1px 6px;
   border-radius: 80px;
 }
 
-/* ##################################### NavBar ##################################### */
+/* ##################################### Icone Carrinho ##################################### */
 
 
 /* ##################################### Listagem de Lanches ##################################### */
-.col-card a{
+.col-card a {
   text-decoration: none !important;
   color: #000000;
 }
@@ -103,7 +194,7 @@ body a {
   background-color: #efefef;
   border: 2px solid #aaaaaa;
   border-radius: 15px;
-  color: #000000 !important;  
+  color: #000000 !important;
   transition: 15s linear ease-in !important;
 }
 
@@ -167,3 +258,283 @@ body a {
 }
 
 /* ##################################### Carrinho de Compras ##################################### */
+
+
+/* ##################################### Pedido ##################################### */
+
+.pedido .container form .card {
+  color: #000000 !important;
+}
+
+.checkout-completo .container .card {
+  color: #000000 !important;
+}
+
+.checkout-completo .container .card .table {
+  color: #000000 !important;
+}
+
+.checkout-completo .jumbotron {
+  width: 100%;
+  height: 6rem;
+  background-color: green;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 5px;
+}
+
+/* ##################################### Pedido ##################################### */
+
+
+/* ##################################### Login ##################################### */
+
+.login {
+  color: #000000 !important;
+}
+
+.login .container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+}
+
+.login .form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.login form {
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+.login .sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.login .sign-up-container {
+  right: 0;
+  width: 50%;
+  z-index: 1;
+}
+
+.login input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+
+.login .sign-up-container .up {
+  background-color: #c8c8c8;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login .sign-up-container .down {
+  background-color: #c8c8c8;
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login .btn button {
+  background-color: #258cfb;
+  border: none;
+  padding: 12px 45px;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+/* ##################################### Login ##################################### */
+
+
+/* ##################################### Registro Usuário ##################################### */
+
+.register {
+  color: #000000 !important;
+}
+
+.register .container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 730px;
+}
+
+.register .form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.register form {
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+.register .sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.register .sign-up-container {
+  right: 0;
+  width: 50%;
+  z-index: 1;
+}
+
+.register input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+
+.register .sign-up-container .up {
+  background-color: #c8c8c8;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.register .sign-up-container .down {
+  background-color: #c8c8c8;
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.register .btn button {
+  background-color: #258cfb;
+  border: none;
+  padding: 12px 45px;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+/* ##################################### Registro Usuário ##################################### */
+
+
+/* ##################################### Erros ##################################### */
+
+.img-erro {
+  width: 30%;
+  border-radius: 15px;
+}
+
+.erro-403 {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.erro-404 {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ##################################### Erros ##################################### */
+
+
+/* ##################################### Pedidos Lanches ##################################### */
+
+.pedido-lanches {
+  color: #000000 !important;
+}
+
+.pedido-lanches .card .table {
+  color: #000000 !important;
+}
+
+/* ##################################### Pedidos Lanches ##################################### */
+
+
+/* ##################################### Index area administrador ##################################### */
+
+.area-admin .container {
+  color: #000000;
+  background-color: #aaaaaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-bottom: 10rem;
+}
+
+/* ##################################### Index area administrador ##################################### */
+
+
+/* ##################################### Relatório vendas ##################################### */
+
+.relat-pedido .navbar .form-group label {
+  color: #000000 !important;
+}
+
+/* ##################################### Relatório vendas ##################################### */

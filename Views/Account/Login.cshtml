@@ -1,0 +1,38 @@
+@model LoginViewModel
+
+<div class="login mt-5">
+    <div class="container">
+        <div class="form-container sign-in-container">
+            <form asp-controller="Account" asp-action="Login" method="post" role="form">
+                <h1>Login</h1>
+                <input type="hidden" asp-for="ReturnUrl">
+                <div class="form-group w-100 mb-3">
+                    <label asp-for="UserName" class="control-label float-start"></label>
+                    <input asp-for="UserName" class="form-control">
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group w-100 mb-3">
+                    <label asp-for="Password" class="control-label float-start"></label>
+                    <input asp-for="Password" class="form-control">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="btn">
+                    <button>Entrar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-container sign-up-container">
+            <div class="up">
+                <h2>Snack <span class="text-color-title">Spot</span></h2>
+                <h4>Bem Vindo ao nosso restaurante.</h4>
+            </div>
+            <div class="down">
+                <span>Não tem conta?</span>
+                <a asp-controller="Account" asp-action="Register">Cadastre-se</a>
+            </div>
+        </div>
+    </div>
+</div>
