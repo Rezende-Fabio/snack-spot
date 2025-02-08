@@ -51,6 +51,8 @@ public static class ConfigureServices
             options.PageParameterName = "pageindex";
         });
 
+        services.Configure<ConfigurationsImages>(configuration.GetSection("ConfigurationImagePath"));
+
         return services;
     }
 }

@@ -3,6 +3,9 @@
     "Email": "admin@admin.com",
     "Password": "senha_usuario_admin"
   },
+  "ConfigurationImagePath": {
+    "NameFoldersImagesProducts": "images/products"
+  },
   "ConnectionStrings": {
     "DefaultConnection": "Host=localhost;Port=5432;Database=sua_base_de_dados;Username=seu_usuario;Password=sua_senha"
   },

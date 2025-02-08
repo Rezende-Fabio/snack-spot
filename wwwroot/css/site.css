@@ -86,7 +86,7 @@ body a {
 
 /* ##################################### Login Resumo ##################################### */
 
-.login-resumo .dropstart .dropdown-menu{
+.login-resumo .dropstart .dropdown-menu {
   width: 15rem;
 }
 
@@ -538,3 +538,16 @@ body a {
 }
 
 /* ##################################### Relatório vendas ##################################### */
+
+
+/* ##################################### Gerenciador de imagens ##################################### */
+
+.manager-images .hr-images {
+  height: 4px;
+  border-radius: 10px;
+  opacity: 1;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ##################################### Gerenciador de imagens ##################################### */
